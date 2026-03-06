@@ -9,12 +9,12 @@ const remainingCount = document.getElementById("remaining-count");
 
 // 남은 항목 수 업데이트
 function updateCount() {
-  // Phase 2에서 만든 코드를 가져오세요
-  // 미션 ③: 완료된 항목(.done)은 제외하고 카운트하기
-  // 힌트: todoList.querySelectorAll('.todo-item:not(.done)').length
+  // 완료되지 않은 항목만 개수 세기
+  remainingCount.textContent =
+    todoList.querySelectorAll(".todo-item:not(.done)").length;
 }
 
-// 할 일 추가 함수 (Phase 2 코드를 가져오세요)
+// 할 일 추가 함수
 function addTodo() {
   const text = todoInput.value.trim();
   if (text === "") return;
@@ -28,7 +28,13 @@ function addTodo() {
   checkbox.addEventListener("change", function (e) {
     // e.target.checked 가 true이면 done 클래스 추가
     // false이면 done 클래스 제거
-    // 여기에 코드를 작성하세요 ↓
+    if (e.target.checked) {
+      li.classList.add("done");
+    } else {
+      li.classList.remove("done");
+    }
+
+    updateCount();
   });
 
   const span = document.createElement("span");
@@ -60,5 +66,10 @@ todoInput.addEventListener("keydown", function (e) {
   console.log("눌린 키:", e.key);
 
   // Enter 키일 때 addTodo() 호출하기
-  // 여기에 코드를 작성하세요 ↓
+  if (e.key === "Enter") {
+    addTodo();
+  }
 });
+
+// 처음 화면에 있는 샘플 항목도 반영
+updateCount();
