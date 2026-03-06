@@ -1,92 +1,162 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR",
-    sans-serif;
-  background: #f0f4ff;
-  color: #1f2937;
-}
 
-.wrap {
-  max-width: 840px;
-  margin: 0 auto;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f0f4ff;
+  display: flex;
+  justify-content: center;
   padding: 40px 20px;
 }
 
-.hero {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #fff;
+.app {
+  background: white;
   border-radius: 16px;
-  padding: 28px 24px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
 }
 
-.hero h1 {
-  margin: 0 0 8px;
+.app-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 30px;
+  color: white;
+}
+
+.app-header h1 {
   font-size: 24px;
-}
-
-.hero p {
-  margin: 0;
-  opacity: 0.9;
-  font-size: 14px;
-}
-
-.grid {
-  margin-top: 18px;
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.card {
-  display: block;
-  text-decoration: none;
-  background: #fff;
-  border-radius: 14px;
-  padding: 18px 16px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease;
-  color: inherit;
-}
-
-.card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-  font-weight: 800;
-  font-size: 16px;
   margin-bottom: 6px;
 }
 
-.card-desc {
+.app-header p {
   font-size: 14px;
-  color: #4b5563;
+  opacity: 0.8;
 }
 
-.footer {
+.summary {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
   margin-top: 16px;
-  font-size: 12px;
-  color: #6b7280;
+  font-size: 14px;
 }
 
-code {
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 2px 6px;
+#remaining-count {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.input-area {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: #667eea;
+}
+
+.btn-add {
+  padding: 12px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-add:hover {
+  background: #5568d3;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 16px 20px;
+  min-height: 200px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: #f8f9fa;
+  transition: all 0.2s;
+}
+
+.todo-item:hover {
+  background: #f0f0f0;
+}
+
+.todo-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.todo-item span {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+}
+
+.todo-item.done span {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.btn-delete {
+  padding: 6px 12px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
   border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #e55555;
+}
+
+/* 미션 안내 박스 */
+.mission-box {
+  margin: 20px;
+  padding: 16px;
+  background: #fffbea;
+  border: 2px dashed #f0c040;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.mission-box strong {
+  color: #e67e22;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
 }
