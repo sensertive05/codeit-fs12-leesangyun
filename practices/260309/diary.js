@@ -345,8 +345,8 @@ function handleSubmit(e) {
 // TODO: diaryForm에 'submit' 이벤트 리스너를 연결하세요
 // 힌트: diaryForm.addEventListener('submit', handleSubmit);
 // (Part 1에서 diaryForm을 올바르게 선택해야 동작합니다!)
-if (diaryForm) {
   // TODO: 여기에 addEventListener를 작성하세요
+  if (diaryForm) {
   diaryForm.addEventListener("submit", handleSubmit);
 }
 
